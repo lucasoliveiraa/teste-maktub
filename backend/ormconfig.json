@@ -1,0 +1,8 @@
+{
+  "type": "mysql2",
+  "host": "mysql742.umbler.com",
+  "port": 41890,
+  "username": "testerenato",
+  "password": "lucasMAKTUB2021",
+  "database": "testerenato"
+}
