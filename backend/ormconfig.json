@@ -6,7 +6,10 @@
   "password": "docker",
   "database": "teste_renato",
   "migrations": [
-    "./src/database/migration/*.ts"
+    "./src/database/migrations/*.ts"
+  ],
+  "entities": [
+    "./src/models/*.ts"
   ],
   "cli": {
     "migrationsDir": "./src/database/migrations"

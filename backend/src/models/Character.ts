@@ -1,28 +1,33 @@
-import { uuid } from 'uuidv4';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
+@Entity('characters')
 class Character {
-  id: string;
+  @PrimaryGeneratedColumn('increment')
+  id: number;
 
+  @Column()
   name: string;
 
+  @Column()
   description_short: string;
 
+  @Column()
   description_full: string;
 
+  @Column()
   url_image: string;
 
-  constructor({
-    name,
-    description_short,
-    description_full,
-    url_image,
-  }: Omit<Character, 'id'>) {
-    this.id = uuid();
-    this.name = name;
-    this.description_short = description_short;
-    this.description_full = description_full;
-    this.url_image = url_image;
-  }
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }
 
 export default Character;

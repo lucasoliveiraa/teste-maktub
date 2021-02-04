@@ -1,26 +1,10 @@
 import { Router } from 'express';
-import CharactersRepository from '../repositories/CharactersRepository';
+import CharactersController from '../Controllers/CharactersController';
 
 const charactersRouter = Router();
-const charactersRepository = new CharactersRepository();
 
-charactersRouter.get('/', (request, response) => {
-  const characters = charactersRepository.all();
-
-  return response.json(characters);
-});
-
-charactersRouter.post('/', (request, response) => {
-  const { name, description_short, description_full, url_image } = request.body;
-
-  const character = charactersRepository.create({
-    name,
-    description_short,
-    description_full,
-    url_image,
-  });
-
-  return response.json(character);
-});
+charactersRouter.post('/', CharactersController.create);
+charactersRouter.get('/', CharactersController.index);
+charactersRouter.get('/:id', CharactersController.show);
 
 export default charactersRouter;
