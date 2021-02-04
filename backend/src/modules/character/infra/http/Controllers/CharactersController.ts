@@ -50,7 +50,7 @@ export default {
 
     const createCharacter = new CreateCharacterService();
 
-    const character = createCharacter.execute({
+    const character = await createCharacter.execute({
       name,
       description_short,
       description_full,
