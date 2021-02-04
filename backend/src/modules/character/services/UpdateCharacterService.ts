@@ -28,10 +28,11 @@ class UpdateCharacterService {
     }
 
     characterExists.name = name || characterExists.name;
-    characterExists.name =
+    characterExists.description_short =
       description_short || characterExists.description_short;
-    characterExists.name = description_full || characterExists.description_full;
-    characterExists.name = url_image || characterExists.url_image;
+    characterExists.description_full =
+      description_full || characterExists.description_full;
+    characterExists.url_image = url_image || characterExists.url_image;
     characterExists.updated_at = new Date(Date.now());
 
     return await charactersRepository.save(characterExists);

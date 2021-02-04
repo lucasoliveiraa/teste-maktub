@@ -11,10 +11,15 @@ charactersRouter.post(
   CharactersController.create,
 );
 charactersRouter.get('/character/list', CharactersController.show);
-charactersRouter.get(
+charactersRouter.put(
   '/character/update/:id',
   ensureAuthenticated,
   CharactersController.update,
+);
+charactersRouter.delete(
+  '/character/:id',
+  ensureAuthenticated,
+  CharactersController.delete,
 );
 
 export default charactersRouter;

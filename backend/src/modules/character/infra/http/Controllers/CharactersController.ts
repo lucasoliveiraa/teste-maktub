@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import { Request, Response } from 'express';
 import CreateCharacterService from '../../../services/CreateCharacterService';
+import DeleteCharacterService from '../../../services/DeleteCharacterService';
 import ListCharacterService from '../../../services/ListCharacterService';
 import UpdateCharacterService from '../../../services/UpdateCharacterService';
 
@@ -38,6 +39,16 @@ export default {
     const character = await characters.execute();
 
     return response.json(character);
+  },
+
+  async delete(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+
+    const character = new DeleteCharacterService();
+
+    await character.execute({ id });
+
+    return response.status(204).send();
   },
 
   async create(request: Request, response: Response): Promise<Response> {
