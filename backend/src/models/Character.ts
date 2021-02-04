@@ -11,12 +11,12 @@ class Character {
 
   url_image: string;
 
-  constructor(
-    name: string,
-    description_short: string,
-    description_full: string,
-    url_image: string,
-  ) {
+  constructor({
+    name,
+    description_short,
+    description_full,
+    url_image,
+  }: Omit<Character, 'id'>) {
     this.id = uuid();
     this.name = name;
     this.description_short = description_short;

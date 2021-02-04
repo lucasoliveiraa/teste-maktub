@@ -1,8 +1,8 @@
 {
-  "type": "mysql2",
-  "host": "mysql742.umbler.com",
-  "port": 41890,
-  "username": "testerenato",
-  "password": "lucasMAKTUB2021",
-  "database": "testerenato"
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "postgres",
+  "password": "docker",
+  "database": "teste_renato"
 }

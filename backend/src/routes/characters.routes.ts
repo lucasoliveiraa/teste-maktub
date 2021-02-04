@@ -13,12 +13,12 @@ charactersRouter.get('/', (request, response) => {
 charactersRouter.post('/', (request, response) => {
   const { name, description_short, description_full, url_image } = request.body;
 
-  const character = charactersRepository.create(
+  const character = charactersRepository.create({
     name,
     description_short,
     description_full,
     url_image,
-  );
+  });
 
   return response.json(character);
 });
