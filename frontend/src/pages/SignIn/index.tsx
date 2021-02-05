@@ -1,8 +1,8 @@
 import React from 'react';
-import { FiLogIn } from 'react-icons/fi';
+import { FiLock, FiLogIn, FiMail } from 'react-icons/fi';
 
-// import Input from '../../components/Input';
-// import Button from '../../components/Button';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 import { Container, Content } from './styles';
 
@@ -12,9 +12,9 @@ const SignIn: React.FC = () => {
       <Content>
         <form action="">
           <h1>Sign In</h1>
-          <input placeholder="E-mail" />
-          <input type="password" placeholder="Password" />
-          <button type="button">Entrar</button>
+          <Input name="email" icon={FiMail} placeholder="E-mail" />
+          <Input name="password" icon={FiLock} type="password" placeholder="Password" />
+          <Button type="button">Entrar</Button>
         </form>
         <a href="/">
           <FiLogIn />
