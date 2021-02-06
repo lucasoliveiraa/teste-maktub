@@ -8,13 +8,13 @@
 
 ** Clone o projeto e acesse a pasta **
 
-`` `bash
+```bash
 $ https://github.com/lucasoliveiraa/teste-maktub.git && cd backend
-`` `
+```
 
 **Siga os passos abaixo**
 
-`` `bash
+```bash
 # Instale as dependências
 $ yarn
 
@@ -26,4 +26,4 @@ $ yarn typeorm migration: run
 $ yarn dev: server
 
 # Muito bem, o projeto foi iniciado!
-`` `
+```
