@@ -15,6 +15,7 @@ import Button from '../../components/Button';
 import { Container, Content, AnimationContainer } from './styles';
 
 interface SignInFormData {
+  id: number;
   name: string;
   description_short: string;
   description_full: string;
@@ -24,7 +25,6 @@ interface SignInFormData {
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const history = useHistory();
-  const { user } = useAuth();
 
   const handleSubmit = useCallback(async(data: SignInFormData) => {
     try {
@@ -42,7 +42,7 @@ const SignIn: React.FC = () => {
         abortEarly: false,
       });
 
-      await api.post('/character', data);
+      await api.put(`/character/update/${id}`, data);
 
       alert('Personagem adicionado');
 
