@@ -66,9 +66,9 @@ const Dashboard: React.FC = () => {
       <Content>
         <SubHeader>
           <h1>Wiki Naruto</h1>
-          <Link to="/">
+          <Link to="/createcharacter">
             <FiUserPlus />
-            Volta para login
+            Adicionar
           </Link>
         </SubHeader>
         <Cards>
