@@ -3,7 +3,7 @@ import { FiLock, FiLogIn, FiMail } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import {useAuth} from '../../hooks/auth';
 import getValidationErrors from '../../utils/getValidationErrors';
@@ -19,6 +19,7 @@ interface SignInFormData {
 
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const history = useHistory();
 
   const { user, signIn } = useAuth();
 
@@ -43,13 +44,15 @@ const SignIn: React.FC = () => {
         email: data.email,
         password: data.password,
       });
+
+      history.push('/dashboard');
     } catch (err) {
       const errors = getValidationErrors(err);
 
       formRef.current?.setErrors(errors);
       // alert('Ocorreu um erro ao fazer login, cheque as credenciais.');
     }
-  }, [signIn]);
+  }, [signIn, history]);
 
   return (
     <Container>

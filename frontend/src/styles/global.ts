@@ -12,6 +12,7 @@ export default createGlobalStyle`
   body {
     background: url(${backgroundLogo}) no-repeat;
     background-size: cover;
+    background-color: #0a0a0a;
     color: #fff;
     -webkit-font-smoothing: antialiased;
   }
