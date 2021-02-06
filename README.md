@@ -23,7 +23,7 @@ $ yarn
 $ yarn typeorm migration: run
 
 # Para terminar, execute o serviço api
-$ yarn dev: server
+$ yarn dev
 
 # Muito bem, o projeto foi iniciado!
 ```
